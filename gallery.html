@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tailwindcss.css">
+    <title>Document</title>
+</head>
+<body class=" bg-black text-white">
+    <div id="app">
+
+<div class=" mt-16 flex justify-center ">
+    <div class=" relative " v-for="(slide, index) in slides" :key="slide" :index="index" visibleSlide="visibleSlide">
+<div v-show="visibleSlide === index">
+       <img width="600px"  class="relative overflow-hidden h-96" :src="slide" alt="">                                 
+ <button @click="prev" class=" absolute top-1/2 bg-black p-1 bg-opacity-80 pr-2">prev</button>
+ <div class="flex justify-end ">
+    <button @click="next" class=" absolute top-1/2 righ-16 bg-black p-1 bg-opacity-80 pr-2">next</button>
+    </div>
+</div>
+ 
+     
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <script src="vue.js"></script>
+    <script>
+        let app = new Vue ({
+            el: '#app',
+            data: {
+            slides:[
+            "img/1.jpg",
+            "img/3.jpg",
+            "img/4.jpg",
+            "img/5.jpg",
+            "img/7.jpg",
+            ],visibleSlide : 0,
+                        },
+
+            methods: {
+                next (){
+                    if(this.visibleSlide >= this.slides.length - 1){
+                        this.visibleSlide = 0
+                    }
+                    else{
+                        this.visibleSlide++
+                    }
+
+                },
+
+                prev(){
+                    if(this.visibleSlide == 0){
+                        this.visibleSlide = this.slides.length - 1
+                    }
+                    else{
+                        this.visibleSlide--
+                    }
+                }
+                
+            },
+        })
+    </script>
+</body>
+</html>
