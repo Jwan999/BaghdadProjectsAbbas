@@ -32,7 +32,7 @@
            <a href="gallery.html" class="font-semibold hover:text-blue-800 duration-500  hover:underline"
             >OUR GALLERY</a
           >
-              <a href="#" class="font-semibold hover:text-blue-800 duration-500  hover:underline"
+              <a href="aboutus.html" class="font-semibold hover:text-blue-800 duration-500  hover:underline"
             >ABOUT US</a
           > 
            <a href="contactus.html" class="font-semibold hover:text-blue-800  duration-500 hover:underline"
@@ -52,7 +52,7 @@
         </h1>
         <p class="text-gray-100 bg-black p-2 bg-opacity-70">
             is concedered as the first and largest social media platform on construction sector in Iraq <br> it aims to highlight the progressive side of Baghdad
-            by posting regular updates on every single project <br> site to keep people updated and to promote the invesment sector
+            by posting regular updates on every single<br> project  site to keep people updated and to promote the invesment sector
             </p>
       </div>
 
@@ -68,7 +68,7 @@
 <!-- CARDS -->
 
 <!-- 1 -->
-<div class="mt-8 max-w-7xl mx-auto">
+<div v-for="item in news" class="mt-8 max-w-7xl mx-auto">
 
   <a href="news.html" class=" text-2xl text-gray-900 font-bold tracking-wide hover:underline mb-6 ">
     NEWS
@@ -80,21 +80,22 @@
       
       <div class="transform transition hover:scale-105 duration-500 shadow-lg houver:shadow-xl">
         <div>
-          <img class="w-80 h-52" src="img/news4.jpg" alt="">
+          <img class="w-80 h-52" :src="item.Sinaa.img" alt="">
           <div class="px-4 py-2">
-            <h3 class="text-lg font-semibold ">
-              محلات شارع الصناعة تعود ليلا
-            </h3>
-            <div class="flex space-x-2 mt-2">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </span>
-              <h3 class="text-md text-gray-600 font-semibold mb-2">Baghdad</h3>
+            <div class="flex  justify-end space-x-2 mt-2">
+
+              <h3 class="text-lg text-gray-600 font-semibold mb-2"> {{item.Sinaa.loc}} </h3>
+                         <span>
+              <img src="icons/pin.png" class="w-6" alt="">
+              </span> 
             </div>
-            <p class="text-sm tracking-normal">بعد إغلاق دام ل 18 سنة ...... المحال التجارية لشارع الصناعة تستعد لفتح  ابوابها لتعاود نشاطها ليلاً مع بداية الشهر المقبل.</p>
+            <h3 class="text-lg font-semibold text-right">
+                {{item.Sinaa.header}}
+            </h3>
+            
+            <p class="text-sm tracking-normal text-right">
+              {{item.Sinaa.details}}
+            </p>
             <button class="mt-12 w-full text-center bg-blue-400 py-2 rounded-lg text-white font-semibold hover:bg-white hover:text-blue-400 hover:border-blue-400 border-2">Read more</button>
           </div>
         </div>
@@ -105,21 +106,25 @@
       
       <div class="transform transition hover:scale-105 duration-500 shadow-lg houver:shadow-xl">
         <div>
-          <img class="w-80 h-52" src="img/1.jpg" alt="">
-          <div class="px-4 py-2">
-            <h3 class="text-lg font-semibold ">
-              Central Bank of Iraq
-            </h3>
-            <div class="flex space-x-2 mt-2">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </span>
-              <h3 class="text-md text-gray-600 font-semibold mb-2">Baghdad</h3>
+          <img class="w-80 h-52" :src="item.Abraj.img" alt="">
+          <div class="px-4 py-2"> 
+            <div class="flex  justify-end space-x-2 mt-2">
+         
+               
+               <h3 class="text-lg text-gray-600 font-semibold mb-2">{{item.Abraj.loc}}</h3>
+               <span>
+                             <img src="icons/pin.png" class="w-6" alt="">
+
+              </span>   
             </div>
-            <p class="text-sm tracking-normal">Designed by Zaha Hadid, the buliding of the Central Bank of Baghdad raising to the sky.</p>
+            <h3 class="text-lg font-semibold text-right">
+                {{item.Abraj.header}}
+            </h3>
+           
+            <p class="text-sm tracking-normal text-right">  
+                {{item.Abraj.details}}
+
+            </p>
             <button class="mt-12 w-full text-center bg-blue-400 py-2 rounded-lg text-white font-semibold hover:bg-white hover:text-blue-400 hover:border-blue-400 border-2">Read more</button>
           </div>
         </div>
@@ -130,21 +135,19 @@
       
       <div class="transform transition hover:scale-105 duration-500 shadow-lg houver:shadow-xl">
         <div>
-          <img class="w-80 h-52" src="img/1.jpg" alt="">
+          <img class="w-80 h-52" :src="item.Bank.img" alt="">
           <div class="px-4 py-2">
             <h3 class="text-lg font-semibold ">
-              Central Bank of Iraq
+              {{item.Bank.header}}
             </h3>
             <div class="flex space-x-2 mt-2">
               <span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+                           <img src="icons/pin.png" class="w-6" alt="">
+
               </span>
-              <h3 class="text-md text-gray-600 font-semibold mb-2">Baghdad</h3>
+              <h3 class="text-md text-gray-600 font-semibold mb-2">{{item.Bank.loc}}</h3>
             </div>
-            <p class="text-sm tracking-normal">Designed by Zaha Hadid, the buliding of the Central Bank of Baghdad raising to the sky.</p>
+            <p class="text-sm tracking-normal">{{item.Bank.details}}</p>
             <button class="mt-12 w-full text-center bg-blue-400 py-2 rounded-lg text-white font-semibold hover:bg-white hover:text-blue-400 hover:border-blue-400 border-2">Read more</button>
           </div>
         </div>
@@ -156,21 +159,19 @@
       
       <div class="transform transition hover:scale-105 duration-500  shadow-lg houver:shadow-xl">
         <div>
-          <img class="w-80 h-52" src="img/4.jpg" alt="">
+          <img class="w-80 h-52" :src="item.Bank.img" alt="">
           <div class="px-4 py-2">
             <h3 class="text-lg font-semibold ">
-              Central Bank of Iraq
+              {{item.Bank.header}}
             </h3>
             <div class="flex space-x-2 mt-2">
               <span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+                             <img src="icons/pin.png" class="w-6" alt="">
+
               </span>
-              <h3 class="text-md text-gray-600 font-semibold mb-2">Baghdad</h3>
+              <h3 class="text-md text-gray-600 font-semibold mb-2">{{item.Bank.loc}}</h3>
             </div>
-            <p class="text-sm tracking-normal">Designed by Zaha Hadid, the buliding of the Central Bank of Baghdad raising to the sky.</p>
+            <p class="text-sm tracking-normal">{{item.Bank.details}}</p>
             <button class="mt-12 w-full text-center bg-blue-400 py-2 rounded-lg text-white font-semibold hover:bg-white hover:text-blue-400 hover:border-blue-400 border-2">Read more</button>
           </div>
         </div>
@@ -187,9 +188,9 @@
 
   <!-- SECOND SECTION -->
 
+<!-- GALLERY -->
 
-
-    <div class=" mt-16 flex justify-center mb-12">   
+    <div class=" mt-10 flex justify-center">   
 
         <div class=" relative " v-for="(slide, index) in slides" :key="slide" :index="index" visibleSlide="visibleSlide">
     <div v-show="visibleSlide === index"> 
@@ -201,10 +202,10 @@
         
 
       </div>
-           <img width="600px"  class="relative overflow-hidden h-96" :src="slide" alt="">                                 
-     <button @click="prev"  class=" absolute top-1/2 pl-1 bg-white bg-opacity-30 hover:bg-opacity-50"><img width="30px" src="icons/icons8-left-arrow-50.png" alt=""></button>
+           <img width="600px"  class="relative overflow-hidden h-96 shadow-2xl" :src="slide" alt="">                                 
+     <button @click="prev"  class=" absolute top-1/2 -ml-14"><img width="35px" src="icons/left-arrow.svg"  alt=""></button>
      <div class="flex justify-end ">
-        <button @click="next" class=" absolute top-1/2 pr-1  bg-white bg-opacity-30 hover:bg-opacity-50"><img width="30px" src="icons/icons8-right-arrow-50.png" alt=""></button>
+        <button @click="next" class=" absolute top-1/2 -mr-14"><img width="35px" src="icons/right-arrow.svg" alt=""></button>
         </div>
     </div>
     </div>
@@ -212,11 +213,11 @@
     
     <!-- PROJECTS TRACKER -->
     
-    <div class=" max-w-7xl  mx-auto">
+    <div class="mt-12 max-w-7xl  mx-auto">
 <div class="grid grid-cols-2 bg-white rounded-2xl p-4 flex ">
   <!-- IMAGE -->
   <div>
-     <img width="600px" class="w-=/2  rounded-2xl" src="img/1.jpg" alt="">
+     <img style="width:600px;height:500px;" class="rounded-2xl" :src="slides[0]" alt="">
   </div>
  <!-- TEXT -->
     <div>
@@ -281,7 +282,7 @@
      </div>
       <!-- IMAGE -->
       <div>
-         <img width="600px" height="10px" class="rounded-2xl" src="img/ramita.runq_240581826_851750252124840_8473621350939362043_n.jpg" alt="">
+         <img style="width:600px;height:500px;"  class="rounded-2xl" :src="slides[5]" alt="">
       </div>
         </div>
 
@@ -307,11 +308,53 @@
                 data: {
                 slides:[
                 "img/1.jpg",
+                "img/2.jpg",
                 "img/3.jpg",
                 "img/4.jpg",
-                "img/5.jpg",
+                "img/6.jpg",
                 "img/7.jpg",
-                ],visibleSlide : 0,
+                "img/8.jpg",
+                "img/9.jpg",
+                "img/10.jpg",
+                "img/11.jpg",
+                "img/12.jpg",
+                "img/13.jpg",
+                "img/14.jpg",
+                "img/15.jpg",
+                "img/16.jpg",
+                "img/17.jpg",
+                "img/18.jpg",
+                "img/Abraj.jpg",
+
+                ],
+                  news:[
+                    {
+                      Abraj:{
+                           title:"Abraj",
+                      header:"بمعدل تقدم يبلغ ثلاث طوابق بالشهر",
+                      details:"الأبراج السكنية لمشروع بروج السكني تواصل ارتفاعها لتصبح من أعلى الابراج السكنية التي سوف تزين أفق العاصمة بغداد",
+                      loc:"بغداد",
+                      img:"img/news/Abraj1.jpg"
+                    },
+                    Sinaa:{
+                      title:"Sinaa Street",
+                      header:"بعد إغلاق دام 18 سنة",
+                      details:" المحال التجارية لشارع الصناعة تستعد لفتح  ابوابها لتعاود نشاطها ليلاً مع بداية الشهر المقبل",
+                      loc:"بغداد",
+                      img:"img/news/news1.jpg"
+                    },
+                    Bank:{
+                      title:"Central Bank of Iraq",
+                      header:"Central Bank of Iraq",
+                      details:"Designed by Zaha Hadid, the buliding of the Central Bank of Iraq raising to the sky",
+                      loc:"Baghdad",
+                      img:"img/news/7.jpg"
+                    }
+                      }
+                  ],
+
+
+                visibleSlide : 0,
                             },
     
                 methods: {

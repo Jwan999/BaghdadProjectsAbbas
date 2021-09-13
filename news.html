@@ -7,41 +7,147 @@
     <title>Document</title>
     <link rel="stylesheet" href="tailwindcss.css">
 </head>
-<body class=" bg-gray-200">
-    <div class=" max-w-2xl mx-auto mt-12 h-screen">
+<body >
 
-        <div class="h-2/3 bg-center">
-        
-    </div>
-<div class=" text-5xl text-center">
-    NEWS HERE!
+    <div id="app">
+    <div  class="mx-auto max-w-3xl bg-white rounded-t-3xl mt-2 mb-2">
+  <div class="max-w-2xl mx-auto">
+    <a href="news.html">
+          <h1 class=" text-center font-bold text-4xl mb-1">
+           NEWS
+       </h1> 
+    </a>   
+  
+       <a href="news.html">
+<div class=" relative">
+            <img class="w-full" style="height:650px;" src="img/5.jpg" alt="">
+            <p class=" absolute bottom-0 text-white bg-black bg-opacity-60 p-2">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione, adipisci totam. Voluptatibus, dolore aut quibusdam dicta ea fuga laudantium non? Commodi accusamus earum porro necessitatibus odio doloribus, harum nam velit?
+            </p>
+
 </div>
+
+       </a>
+
+    </div>
 
 <!-- CARDS -->
 
-<div class="space-y-2 ">
+<div  class="space-y-3 p-3 ">
 
-    <div class=" bg-white flex space-x-2 mt-12 rounded-md overflow-hidden">
-        <img class=" h-24 w-32" src="img/1.jpg" alt="">
-        <p class="text-gray-500 flex items-start">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad illum nulla quae beatae, esse fugiat, in facere eum adipisci recusandae aut inventore nihil fuga ipsa nisi suscipit molestias. Officia, et.</p>
-    </div>
-    <div class=" bg-white flex space-x-2 rounded-md overflow-hidden">
-        <img class=" h-24 w-32" src="img/3.jpg" alt="">
-        <p class="text-gray-500 flex items-start">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad illum nulla quae beatae, esse fugiat, in facere eum adipisci recusandae aut inventore nihil fuga ipsa nisi suscipit molestias. Officia, et.</p>
-    </div>
-    <div class=" bg-white flex space-x-2 rounded-md overflow-hidden">
-        <img class=" h-24 w-44" src="img/panorama.jpg" alt="">
-        <p class="text-gray-500 flex items-start">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad illum nulla quae beatae, esse fugiat, in facere eum adipisci recusandae aut inventore nihil fuga ipsa nisi suscipit molestias. Officia, et.</p>
-    </div>
-    <div class=" bg-white flex space-x-2 rounded-md overflow-hidden">
-        <img class=" h-24 w-32" src="img/5.jpg" alt="">
-        <p class="text-gray-500 flex items-start">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad illum nulla quae beatae, esse fugiat, in facere eum adipisci recusandae aut inventore nihil fuga ipsa nisi suscipit molestias. Officia, et.</p>
-    </div>
 
+
+
+
+    <ul  class="grid grid-row-3  ">
+        <li  v-for="item in news" class=" w-full h-full">
+            <a href="news.html" class=" bg-white flex space-x-2 mt-2 rounded-2xl overflow-hidden border-2 p-3">
+        <img class="rounded-xl h-28 w-32" :src="item.img" alt="">
+        <div>
+            <p class="text-gray-900 font-semibold flex items-start hover:underline">
+                         {{item.details}}   
+            </p>
+            <p class="ml-4 mt-2 text-sm font-semibold text-gray-700">&bull;{{item.loc}} &bull;{{item.time}} </p>
+
+        </div>
+    </a>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+    <!-- <a href="news.html"class=" bg-white flex space-x-2 rounded-2xl overflow-hidden border-2 p-3">
+        <img class="rounded-xl h-28 w-32" :src="" alt="">
+        <div>
+            <p class="text-gray-900 font-semibold flex items-start hover:underline">
+
+            </p>
+            <p class="ml-4 mt-2 text-sm font-semibold text-gray-700">&bull;  &bull; ago</p>
+
+        </div>
+    </a>
+    <a href="news.html" class=" bg-white flex space-x-2 rounded-2xl overflow-hidden border-2 p-3">
+        <img class="rounded-xl h-28 w-32" :src="" alt="">
+        <div>
+            <p class="text-gray-900 font-semibold flex items-start hover:underline">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad illum nulla quae beatae, esse fugiat, in facere eum adipisci recusandae aut inventore nihil fuga ipsa nisi suscipit molestias. Officia, et.</p>
+            <p class="ml-4 mt-2 text-sm font-semibold text-gray-700">&bull;  &bull;  ago</p>
+
+        </div>
+    </a>
+    <a href="news.html" class=" bg-white flex space-x-2 rounded-2xl overflow-hidden border-2 p-3">
+        <img class="rounded-xl h-28 w-32" :src="" alt="">
+        <div>
+            <p class="text-gray-900 font-semibold flex items-start hover:underline">Lorem ipsum, lor dolor sit amet consectetur adipisicing elit. Ad illum nulla quae beatae, esse fugiat, in facere eum adipisci recusandae aut inventore nihil fuga ipsa nisi suscipit molestias. Officia, et.</p>
+            <p class="ml-4 mt-2 text-sm font-semibold text-gray-700">&bull; Baghdad &bull;  ago</p>
+
+        </div>
+    </a> -->
+
+</div>
 </div>
 
 
 
     </div>
+  <script src="vue.js"></script>
+  <script>
+    let app = new Vue ({
+        el: '#app',
+        data: {
+          news:[
+            {
+            //   Abraj:{
+                   title:"Abraj",
+              header:"بمعدل تقدم يبلغ ثلاث طوابق بالشهر",
+              details:"الأبراج السكنية لمشروع بروج السكني تواصل ارتفاعها لتصبح من أعلى الابراج السكنية التي سوف تزين أفق العاصمة بغداد",
+              loc:"بغداد",
+              img:"img/news/Abraj1.jpg",
+            time:" منذ 45 دقيقة"
+        },
+            // },
+            // Sinaa:{
+                {
+              title:"Sinaa Street",
+              header:"بعد إغلاق دام 18 سنة",
+              details:" المحال التجارية لشارع الصناعة تستعد لفتح  ابوابها لتعاود نشاطها ليلاً مع بداية الشهر المقبل",
+              loc:"بغداد",
+              img:"img/news/news1.jpg",
+              time:"منذ 2 ساعة"        },
+            // },
+            // Bank:{
+                {
+              title:"Central Bank of Iraq",
+              header:"Central Bank of Iraq",
+              details:"Designed by Zaha Hadid, the buliding of the Central Bank of Iraq raising to the sky",
+              loc:"Baghdad",
+              img:"img/news/7.jpg",
+              time:"2 hours ago"
+            // }
+              }
+          ],
+
+
+     
+                    },
+
+    })
+</script>
 </body>
 </html>
