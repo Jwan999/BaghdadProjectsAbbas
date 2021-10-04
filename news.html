@@ -4,58 +4,122 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>News</title>
     <link rel="stylesheet" href="tailwindcss.css">
     <link rel="icon" href="img/logo.png" />
 </head>
-<body >
+<body class="">
 
     <div id="app">
 
 
-<div>
+<div class=" ">
 
     
         <!-- NAV BAR -->
     
     
-        <nav class="bg-gray-200 inset-x-0 fixed top-0 z-50 bg-opacity-90">
-            <div class="flex justify-between">   <a
+    
+        <nav class="bg-gray-200 inset-x-0 md:fixed md:top-0 z-50 bg-opacity-90">
+            <div class="flex justify-between ">   <a
                 href="\"
-                class="flex mr-44 items-center justify-center font-semibold"
+                class="flex items-center justify-center font-semibold"
               >
                 <img class="h-12" src="img/logo.png" alt="logo" />
-                <p>Baghdad Projects</p>
+                <p  >Baghdad Projects</p>
               </a>
       
-              <div class="flex space-x-5 mr-4 items-center">
+              <div class="flex space-x-5 mr-4 mt-3 items-center hidden md:block">
            
-               <a href="news.html" class="font-semibold hover:text-blue-800 duration-500 "
+               <a href="news.html" class="font-semibold hover:text-blue-700 duration-300 "
                   >NEWS</a
                 > 
-                 <a href="gallery.html" class="font-semibold hover:text-blue-800 duration-500  "
-                  >GALLERY</a
-                >
-                    <a href="aboutus.html" class="font-semibold hover:text-blue-800 duration-500  "
+                <a href="gallery.html" class="font-semibold hover:text-blue-700 duration-300  "
+                >GALLERY</a
+              >
+              <a href="addproject.html" class="font-semibold hover:text-blue-700 duration-300  "
+                >ADD PROJECT</a
+              >
+                    <a href="aboutus.html" class="font-semibold hover:text-blue-700 duration-300  "
                   >ABOUT US</a
                 > 
-                 <a href="contactus.html" class="font-semibold hover:text-blue-800  duration-500 "
+                 <a href="contactus.html" class="font-semibold hover:text-blue-700  duration-300 "
                   >CONTACT US</a
                 >
               </div>
+              <div class="md:hidden mr-2">
+                <button  @click="menu=!menu"><img  src="icons/menu-button-of-three-horizontal-lines.png" class=" w-6 mt-3"></button>
+                
+              </div>
             </div>
           </nav>
+          <div v-show="menu" class=" md:hidden  w-full bg-gray-700 text-white flex flex-col">
+            <a href="news.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300 "
+            >NEWS</a
+          > 
+          <a href="gallery.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300  "
+          >GALLERY</a
+        >
+        <a href="gallery.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300  "
+          >ADD PROJECT</a
+        >
+              <a href="aboutus.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300  "
+            >ABOUT US</a
+          > 
+           <a href="contactus.html" class="border-b-2 border-white p-2 hover:text-blue-700  duration-300 "
+            >CONTACT US</a
+          >
+          </div>
     
-            <div class="w-full mt-2 pt-12 flex">
-                <div class="w-4/12 ml-4 relative">
-                    <img class=" rounded-md" src="img/11.jpg" alt="">
-                    <p class="bottom-0 bg-black bg-opacity-70 p-2 text-white absolute rounded-md"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem inventore id illum at ducimus laboriosam </p>
+
+
+
+
+          <div class="max-w-6xl mt-20 mx-auto">
+     <div class="flex justify-between uppercase ml-2 text-2xl font-bold">
+                   <a href="news.html" class="border-transparent border-b-4 border-blue-700">latest news</a>
+                   <a href="news.html" class="border-transparent border-b-4 hover:border-gray-700 duration-500">politics</a>
+                   <a href="news.html" class="border-transparent border-b-4 hover:border-green-700 duration-500">economy </a>
+                   <a href="news.html" class="border-transparent border-b-4 hover:border-purple-700 duration-500">art & culture</a>
+                   <a href="news.html" class="border-transparent border-b-4 hover:border-blue-500 duration-500">tech</a>               
+                   <a href="news.html" class="border-transparent border-b-4 hover:border-yellow-500 duration-500">sport</a>
+                   <a href="news.html" class="border-transparent border-b-4 hover:border-red-700 duration-500 mr-4">live<span class="animate-pulse absolute h-2 w-2 rounded-full bg-red-700"></span>
+</a>
+
+     </div>
+
+          <!-- PICTURES -->
+
+            <div class="  mt-4 flex justify-center">
+                <div class="w-5/12 relative">
+                    <img class="object-cover h-full " src="img/news/road.jpg" alt="">
+                    <div class="bottom-0 bg-blue-800  px-4 font-bold text-white absolute w-full">
+                      <a href="news.html" class=" text-2xl border-b pb-4 pt-2 hover:underline block">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                      </a>     
+                       <a href="news.html" class="  border-b py-4 hover:underline block">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                      </a>  
+                          <a href="news.html" class="py-4  hover:underline block">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                      </a>             
+
+                        </div>
                 </div>
-                <div class="w-4/12 ml-2">
-                    <h1 class=" font-black text-3xl mb-10">Heladline</h1>
-    <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veniam earum praesentium molestiae voluptates laboriosam numquam a, cumque officia minus aliquid accusamus nihil. Consectetur, aliquam voluptatem? Non impedit amet cumque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, molestias excepturi culpa maxime totam obcaecati ratione! Debitis est mollitia reiciendis impedit obcaecati quo at! Quis sequi architecto temporibus praesentium quasi! amet consectetur adipisicing elit. Soluta ipsam nam tempora sunt? Et fugit sed corrupti esse libero beatae sunt voluptatibus ad, ullam voluptates sit rerum provident corporis adipisci? Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quas earum, deleniti ex voluptates eos, accusamus non voluptatem nisi quis hic fugit voluptatibus autem, soluta doloremque. Quia quasi molestiae quo. lor consectetur adipisicing elit. Esse totam doloribus in quos soluta, odio fuga excepturi minus culpa nobis reprehenderit voluptate rem praesentium dicta perspiciatis ratione natus voluptas consequuntur?</p>
+                <div class="flex">
+                   <div class="w-80 font-bold text- text-gray-900 text-lg ml-2">
+                  <img class="w-80 h-44  object-cover" src="img/news/news1.jpg" alt="">
+                  <a href="news.html" class="border-b-4 border-transparent hover:border-blue-800 duration-300">Lorem ipsum dolor sit amet Quaerat elit adipisicing consectetur  quis   </a>
+                  <img class="w-80 h-44 object-cover mt-8" src="img/news/Abraj1.jpg" alt="">
+                  <a href="news.html" class=" border-b-4 border-transparent hover:border-blue-800 duration-300">Lorem ipsum dolor sit amet Quaerat elit adipisicing consectetur  quis   </a>
                 </div>
-                <div class="w-4/12"></div>
+                <div class="w-80 font-bold text- text-gray-900 text-lg  ml-2">
+                  <img class="w-80 h-44  object-cover" src="img/4.jpg" alt="">
+                  <a href="news.html" class=" border-b-4 border-transparent hover:border-blue-800 duration-300">Lorem ipsum dolor sit amet Quaerat elit adipisicing consectetur  quis   </a>
+                  <img class="w-80 h-44 object-cover mt-8" src="img/9.jpg" alt="">
+                  <a href="news.html" class=" border-b-4 border-transparent hover:border-blue-800 duration-300">Lorem ipsum dolor sit amet Quaerat elit adipisicing consectetur  quis   </a>
+                </div>  
+              </div>
             </div>
     
     
@@ -64,14 +128,15 @@
     
             <!-- CARDS -->
     
-    
-            <div class=" grid grid-cols-4 mx-2">
-                <div  class=" col-span-3  bg-white rounded-t-3xl mt-2 mb-2">
+            <h1 class="text-center font-bold text-4xl mt-20">latest news</h1>
+
+            <div class="">
+                <div  class=" col-span-3  bg-white rounde-t-3xl mt-2 mb-2">
             <div  class="space-y-3 p-3 ">
                 <ul  class="grid grid-row-3  ">
                     <li  v-for="item in news" class=" w-full h-full">
-                        <a href="news.html" class=" bg-white flex space-x-2 mt-2 rounded-2xl overflow-hidden border-2 p-3">
-                    <img  class="rounded-xl h-28 w-32" :src="item.img" alt="">
+                        <a href="news.html" class=" bg-white flex space-x-2 mt-2 rounde-2xl overflow-hidden border-2 p-3">
+                    <img  class="rounde-xl h-28 w-32" :src="item.img" alt="">
                     <div>
                         <p class="text-gray-900 font-semibold flex items-start hover:underline">
                                      {{item.details}}   
@@ -89,99 +154,11 @@
                     </li>
                 </ul>
             </div>
-            </div>
-    
-    
-    
-            <!-- Weather -->
-    
-    <div class=" h-96 w-96  rounded-2xl mt-8 border border-black w-full"> 
-        <div class=" flex justify-between m-4 pb-3 border-b-2 border-black">
-            <div class=" text-xl font-semibold ">
-                Baghdad
-            </div>
-            <div class=" flex items-center">
-                <img class="w-5" src="icons/gps.png" alt="">
-            </div>
+            </div>      
         </div>
-        <div class=" flex justify-between m-4 pb-3 ">
-            <div class=" text-xl font-semibold ">
-               <h1 class="">
-                  Sunny 
-               </h1>
-               <div class="flex">
-                 <h1 class=" text-3xl">
-                     40°
-                 </h1> 
-                 <h2 class=" flex items-end ml-1">
-                     c
-                 </h2> 
-               </div> 
-            </div>
-            <div class=" flex items-center">
-                <img class="w-16" src="icons/sunny.png" alt="">
-            </div>
-        </div>
-        <div class="grid grid-cols-5 gap-6 mx-auto max-w-xs mt-6 font-semibold">
-         <div class="">
-             <p>Today</p> 
-             <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
-             <p>
-                 40°C
-         </p>
-             <p>
-                 34°C
-             </p>
-        </div>
-            <div class="">
-                <p>Wed</p>
-                <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
-                <p>
-                    40°C
-                </p>
-                <p>
-                    34°C
-                </p>
-             </div>
-            <div class="">
-                <p>Thu</p>
-                <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
-                <p>
-                    40°C
-                </p>
-                <p>
-                    34°C
-                </p>
-             </div>
-            <div class="">
-                <p>Fri</p>
-                <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
-                <p>
-                    40°C
-                </p>
-                <p>
-                    34°C
-                </p>
-             </div>
-            <div class="">
-                <p>Sat</p>
-                <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
-                <p>
-                    40°C
-                </p>
-                <p>
-                    34°C
-                </p>
-             </div>
-        </div>
-       
     </div>
-    <!-- <div v-for="i in info" >
-    
-        {{i.data.articles}}
-    </div> -->
-    
-    </div>
+
+
 <!-- FOOTER -->
    
 <div class="flex justify-center text-xl border-t-2 mt-4 bg-white">
@@ -217,6 +194,16 @@
     </div>
         
         </div>
+
+
+
+
+
+
+
+
+
+
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -225,6 +212,7 @@
     let app = new Vue ({
         el: '#app',
         data: {
+            menu:false,
           news:[
 
 
@@ -267,13 +255,118 @@
           ],
      info:[],
                     },
-                    mounted() {
-                        axios.get('https://newsapi.org/v2/everything?q=random&from=2021-09-14&sortBy=popularity&apiKey=8f8dd4b764884b74955693c7a09f5ed7')
-                        .then(Response => this.info.push(Response))
-                    },
-               
+                   methods: {
+                    showMenu(){
+                      this.menu= true
+                    }
+                   },
 
     })
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Weather -->
+    <!-- <div class=" h-96 w-96  rounde-2xl mt-8 border border-black w-full"> 
+      <div class=" flex justify-between m-4 pb-3 border-b-2 border-black">
+          <div class=" text-xl font-semibold ">
+              Baghdad
+          </div>
+          <div class=" flex items-center">
+              <img class="w-5" src="icons/gps.png" alt="">
+          </div>
+      </div>
+      <div class=" flex justify-between m-4 pb-3 ">
+          <div class=" text-xl font-semibold ">
+             <h1 class="">
+                Sunny 
+             </h1>
+             <div class="flex">
+               <h1 class=" text-3xl">
+                   40°
+               </h1> 
+               <h2 class=" flex items-end ml-1">
+                   c
+               </h2> 
+             </div> 
+          </div>
+          <div class=" flex items-center">
+              <img class="w-16" src="icons/sunny.png" alt="">
+          </div>
+      </div>
+      <div class="grid grid-cols-5 gap-6 mx-auto max-w-xs mt-6 font-semibold">
+       <div class="">
+           <p>Today</p> 
+           <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
+           <p>
+               40°C
+       </p>
+           <p>
+               34°C
+           </p>
+      </div>
+          <div class="">
+              <p>Wed</p>
+              <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
+              <p>
+                  40°C
+              </p>
+              <p>
+                  34°C
+              </p>
+           </div>
+          <div class="">
+              <p>Thu</p>
+              <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
+              <p>
+                  40°C
+              </p>
+              <p>
+                  34°C
+              </p>
+           </div>
+          <div class="">
+              <p>Fri</p>
+              <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
+              <p>
+                  40°C
+              </p>
+              <p>
+                  34°C
+              </p>
+           </div>
+          <div class="">
+              <p>Sat</p>
+              <img  class="mt-2 -ml-2" src="icons/sunny.png" alt="">
+              <p>
+                  40°C
+              </p>
+              <p>
+                  34°C
+              </p>
+           </div>
+      </div>
+     
+  </div> -->

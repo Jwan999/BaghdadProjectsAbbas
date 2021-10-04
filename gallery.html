@@ -11,9 +11,6 @@
         .h-100{
             height: 40rem;
         }
-        .w-100{
-            width: 45rem;
-        }
     </style>
 </head>
 <body class=" ">
@@ -23,47 +20,90 @@
 <div class="flex flex-col h-screen">
 
   
-  <nav class="bg-gray-200 inset-x-0 fixed top-0 z-50 bg-opacity-90">
-    <div class="flex justify-between">   <a
-              href="\"
-              class="flex mr-44 items-center justify-center font-semibold"
-            >
-              <img class="h-12" src="img/logo.png" alt="logo" />
-              <p>Baghdad Projects</p>
-            </a>
     
-            <div class="flex space-x-5 mr-4 items-center">
-         
-             <a href="news.html" class="font-semibold hover:text-blue-800 duration-500 "
-                >NEWS</a
-              > 
-               <a href="gallery.html" class="font-semibold hover:text-blue-800 duration-500  "
-                >GALLERY</a
-              >
-                  <a href="aboutus.html" class="font-semibold hover:text-blue-800 duration-500  "
-                >ABOUT US</a
-              > 
-               <a href="contactus.html" class="font-semibold hover:text-blue-800  duration-500 "
-                >CONTACT US</a
-              >
-            </div>
-          </div>
-        </nav>
+  <nav class="bg-gray-200 inset-x-0 md:fixed md:top-0 z-50 bg-opacity-90">
+    <div class="flex justify-between ">   <a
+        href="\"
+        class="flex items-center justify-center font-semibold"
+      >
+        <img class="h-12" src="img/logo.png" alt="logo" />
+        <p  >Baghdad Projects</p>
+      </a>
+
+      <div class="flex space-x-5 mr-4 mt-3 items-center hidden md:block">
+   
+       <a href="news.html" class="font-semibold hover:text-blue-700 duration-300 "
+          >NEWS</a
+        > 
+        <a href="gallery.html" class="font-semibold hover:text-blue-700 duration-300  "
+              >GALLERY</a
+            >
+            <a href="addproject.html" class="font-semibold hover:text-blue-700 duration-300  "
+              >ADD PROJECT</a
+            >
+            <a href="aboutus.html" class="font-semibold hover:text-blue-700 duration-300  "
+          >ABOUT US</a
+        > 
+         <a href="contactus.html" class="font-semibold hover:text-blue-700  duration-300 "
+          >CONTACT US</a
+        >
+      </div>
+      <div class="md:hidden mr-2">
+        <button  @click="menu=!menu"><img  src="icons/menu-button-of-three-horizontal-lines.png" class=" w-6 mt-3"></button>
+        
+      </div>
+    </div>
+  </nav>
+  <div v-show="menu" class=" md:hidden  w-full bg-gray-700 text-white flex flex-col">
+    <a href="news.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300 "
+    >NEWS</a
+  > 
+   <a href="gallery.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300  "
+    >GALLERY</a
+  >
+      <a href="aboutus.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300  "
+    >ABOUT US</a
+  > 
+   <a href="contactus.html" class="border-b-2 border-white p-2 hover:text-blue-700  duration-300 "
+    >CONTACT US</a
+  >
+  </div>
           
         
         <div class="grid grid-cols-12 pt-12">
-          <div class="col-span-2  border-r ">
-            <div class="uppercase mt-8 ml-4 font-semibold">
-            <h1 class="border-b-2 text-gray-500">
-              projects
-            </h1>  
-            <div class="space-y-2  text-sm mt-3">
-
-              <a href="#"  class="text-gray-700 hover:text-blue-700 block">central bank of iraq</a>
-              <a href="#" class="text-gray-700 hover:text-blue-700 block">abraj city</a>
-              <a v-on:click="dose" href="#" class="text-gray-700 hover:text-blue-700 block ">dose caffe</a>
-              <a href="#" class="text-gray-700 hover:text-blue-700 block">650 caffe</a>
-              <a href="#" class="text-gray-700 hover:text-blue-700 block">off side caffe</a>
+          <div class="col-span-2 ">
+            <div class=" mt-8 ml-12 font-semibold">
+              <h1 style="font-family: 'Questrial', sans-serif;"class="-ml-4 text-2xl font-black mb-12">
+                Projects <br > Gallery
+              </h1>  
+              <h2 class=" -mt-8 mb-8 text-blue-700 ml-1">Photgraphs/Stories</h2>
+            <div class="space-y-2 overflow-y-auto  h-100 text-sm mt-3">
+              <a v-on:click="originalf" :class="{underline:original}"  href="#" class="text-gray-700 hover:text-blue-700 block focus:font-black ">HOME</a>
+              <a v-on:click="bank"  href="#" :class="{underline:holder==bankimg && original==false}"  class="text-gray-700 hover:text-blue-700 block ">Central Bank of Iraq</a>
+              <a v-on:click="abraj" href="#" :class="{underline:holder==abrajimg && original==false}" class="text-gray-700 hover:text-blue-700 block">Abraj City</a>
+              <a v-on:click="dose" href="#" :class="{underline:holder==doseimg && original==false}" class="text-gray-700 hover:text-blue-700 block ">Dose Caffe</a>
+              <a v-on:click="sixty" href="#" :class="{underline:holder==sixtyimg && original==false}" class="text-gray-700 hover:text-blue-700 block">650 Caffe</a>
+              <a v-on:click="offside" href="#" :class="{underline:holder==offsideimg && original==false}" class="text-gray-700 hover:text-blue-700 block">Offside Caffe</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
+              <a v-on:click="originalf" href="#" class="text-gray-700 hover:text-blue-700 block">project</a>
             </div>
             </div>
           </div>
@@ -75,52 +115,44 @@
 
         
 
-  <div  v-show="original" class="text-center col-span-10 mx-12 pt-12">
-            <div class="mx-auto max-w-7xl mt-6">
-            <ul  class="grid grid-cols-3 gap-8 ">
-                <li  v-for="item in slides" class=" mb-12 w-full h-full">
-                    <img  class="transform transform hover:scale-110 object-cover hover:shadow-2xl duration-500 w-full h-96 " :src="item" alt="">
+  <div  v-show="original" class=" col-span-10 mx-4 pt-9">
+            <div class="mx-auto max-w-7xl ">
+            <ul  class="grid grid-cols-4 gap-4 ">
+                <li  v-for="item in slides" class="  w-full h-full">
+                    <img  class="  transform  hover:scale-110 object-cover duration-500 w-full h-72 " :src="item" alt="">
             
             
                 </li>
             </ul>
-            </div>       
-                 </div>  
-
-
-  
-                   <div v-show="chk" class="text-center col-span-10 mx-12 pt-12">
-                    <div class="mx-auto max-w-7xl mt-6">
-                      <div class="bg-gray-200 p-5 mb-4">
-                        <h1 class=" text-lg font-semibold text-left">
-                          Dose Caffe
+          </div>       
+        </div>  
+        
+        
+        
+        <div class=" col-span-10 mx-4 pt-8">
+          <div class="mx-auto max-w-7xl ">
+                      <div v-for="it in lore"  class="bg-gray-200 p-5 mb-4">
+                        <h1 class=" text-lg font-semibold  text-gray-700  text-left">
+                          {{it.header}}
                         </h1>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsa, aliquid error impedit quas nobis atque? Maxime quo ducimus corrupti quia eveniet neque, voluptatibus laboriosam rem facilis qui libero pariatur.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsa, aliquid error impedit quas nobis atque? Maxime quo ducimus corrupti quia eveniet neque, voluptatibus laboriosam rem facilis qui libero pariatur.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsa, aliquid error impedit quas nobis atque? Maxime quo ducimus corrupti quia eveniet neque, voluptatibus laboriosam rem facilis qui libero pariatur.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsa, aliquid error impedit quas nobis atque? Maxime quo ducimus corrupti quia eveniet neque, voluptatibus laboriosam rem facilis qui libero pariatur.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsa, aliquid error impedit quas nobis atque? Maxime quo ducimus corrupti quia eveniet neque, voluptatibus laboriosam rem facilis qui libero pariatur.                     
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsa, aliquid error impedit quas nobis atque? Maxime quo ducimus corrupti quia eveniet neque, voluptatibus laboriosam rem facilis qui libero pariatur.
+                      <p class=" text-gray-600  ">
+                        {{it.story}}
                       </p>
                           </div>
-                    <ul  class="grid grid-cols-3 gap-8 ">
-                        <li  v-for="item in doseimg" class=" mb-12 w-full h-full">
-                          
-                            <img   class="transform transform hover:scale-110 object-cover hover:shadow-2xl duration-500 w-full h-96 " :src="item" alt="">
+          <ul  class="grid grid-cols-4 gap-4 ">
+              <li  v-for="item in holder" class=" w-full h-full">
+                  <img  class="  transform  hover:scale-110 object-cover duration-500 w-full h-72 " :src="item" alt="">
+          
+          
+              </li>
+          </ul>
+        </div>       
+      </div>  
+     </div>
                     
                     
-                        </li>
-                    </ul>
-                    </div>       
-                         </div>
-
-    
-        </div>
-  
-  
- <!-- FOOTER -->
-   
+                    <!-- FOOTER -->
+                    
  <div class="flex justify-center text-xl border-t-2 mt-4 bg-white">
   <div class=" flex-col ">
     <div class=" font-semibold flex justify-center text-3xl text-gray-700">
@@ -160,8 +192,9 @@
     <script>
         let app = new Vue ({
             el: '#app',
-            data: {
-            slides:[
+            data: {   
+              menu:false,
+              slides:[
                 "img/1.jpg",
                 "img/2.jpg",
                 "img/3.jpg",
@@ -181,25 +214,172 @@
                 "img/18.jpg",
                 "img/Abraj.jpg",
             ],
+            bankimg:[
+            "img/1.jpg",
+            "img/7.jpg",
+            "img/27.jpg",
+            "img/1.jpg",
+            "img/7.jpg",
+            "img/27.jpg",
+            "img/1.jpg",
+            "img/7.jpg",
+            "img/27.jpg",
+            "img/1.jpg",
+            "img/7.jpg",
+            "img/27.jpg",
+          ],
+          bankStory:[
+            {
+              header:'Central Bank of Iraq',
+            story:`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+`
+          },
+          ],
+          abrajimg:[
+          "img/Abraj.jpg",
+          "img/news/Abraj1.jpg",
+          "img/Abraj.jpg",
+          "img/news/Abraj1.jpg",
+          "img/Abraj.jpg",
+          "img/news/Abraj1.jpg",
+          "img/Abraj.jpg",
+          "img/news/Abraj1.jpg",
+          "img/Abraj.jpg",
+          "img/news/Abraj1.jpg",
+          "img/Abraj.jpg",
+          "img/news/Abraj1.jpg",
+
+          ],
+          abrajStory:[
+            {
+              header:'Abraj City',
+            story:`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+`
+          },
+          ],
             doseimg:[
-                "img/1.jpg",
-                "img/2.jpg",
-                "img/3.jpg",
-                "img/4.jpg",
-                "img/6.jpg",
+            "img/13.jpg",
+            "img/19.jpg",
+            "img/20.jpg",
+            "img/21.jpg",
+            "img/22.jpg",
+            "img/24.jpg",
+            "img/13.jpg",
+            "img/19.jpg",
+            "img/20.jpg",
+            "img/21.jpg",
+            "img/22.jpg",
+            "img/24.jpg",
             ],
-            visibleSlide : 0,
+            doseStory:[
+            {
+              header:'Dose Caffe',
+            story:`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+`
+          },
+          ],
+            sixtyimg:[
+            "img/6.jpg",
+            "img/3.jpg",
+            "img/25.jpg",
+            "img/26.jpg",
+            "img/6.jpg",
+            "img/3.jpg",
+            "img/25.jpg",
+            "img/26.jpg",
+            "img/6.jpg",
+            "img/3.jpg",
+            "img/25.jpg",
+            "img/26.jpg",
+            ],
+            sixtyStory:[
+            {
+              header:'650 Caffe',
+            story:`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+`
+          },
+          ],
+            offsideimg:[
+            "img/12.jpg",
+            "img/23.jpg",
+            "img/12.jpg",
+            "img/23.jpg",
+            "img/12.jpg",
+            "img/23.jpg",
+            "img/12.jpg",
+            "img/23.jpg",
+            "img/12.jpg",
+            "img/23.jpg",
+            "img/12.jpg",
+            "img/23.jpg",
+            ],
+            offsideStory:[
+            {
+              header:'Offside Caffe',
+            story:`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur minima quas nihil ea velit sequi accusantium cumque debitis, est aut quia nobis nemo ipsa molestiae optio beatae eius alias? Sint?
+`
+          },
+          ],
+            holder:[],
+            lore:[],
             original:true,
-            chk:false
                         },
 
             methods: {
-              dose(){
-                this.chk=true
+              originalf(){
+                this.holder=this.slides
                 this.original=false
-              }
+                this.lore = null
+              },
+              dose(){
+                this.holder=this.doseimg
+                this.original=false
+                this.lore = this.doseStory
+                            },
+              bank(){
+                this.holder=this.bankimg
+                this.original=false
+                this.lore = this.bankStory
+                            },        
+              abraj(){
+                this.holder=this.abrajimg
+                this.original=false
+                this.lore = this.abrajStory
+                            },
+              sixty(){
+                this.holder=this.sixtyimg
+                this.original=false
+                this.lore = this.sixtyStory
+              },
+              offside(){
+                this.holder=this.offsideimg
+                this.original=false
+                this.lore = this.offsideStory
+              },
            
-                
+              showMenu(){
+                      this.menu = true
+                    }
             },
         })
     </script>

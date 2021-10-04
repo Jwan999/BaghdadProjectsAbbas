@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tailwindcss.css">
+    <link rel="icon" href="img/logo.png" />
+    <title>Add Project</title>
+</head>
+<body background="img/panorama.jpg" class="  bg-no-repeat bg-cover">
+   
+<div id="app">
+
+    <!-- NAV -->
+    <nav class="bg-gray-200 inset-x-0 md:fixed md:top-0 z-50 bg-opacity-90">
+        <div class="flex justify-between ">   <a
+            href="\"
+            class="flex items-center justify-center font-semibold"
+          >
+            <img class="h-12" src="img/logo.png" alt="logo" />
+            <p  >Baghdad Projects</p>
+          </a>
+  
+          <div class="flex space-x-5 mr-4 mt-3 items-center hidden md:block">
+       
+           <a href="news.html" class="font-semibold hover:text-blue-700 duration-300 "
+              >NEWS</a
+            > 
+            <a href="gallery.html" class="font-semibold hover:text-blue-700 duration-300  "
+            >GALLERY</a
+          >
+          <a href="addproject.html" class="font-semibold hover:text-blue-700 duration-300  "
+            >ADD PROJECT</a
+          >
+                <a href="aboutus.html" class="font-semibold hover:text-blue-700 duration-300  "
+              >ABOUT US</a
+            > 
+             <a href="contactus.html" class="font-semibold hover:text-blue-700  duration-300 "
+              >CONTACT US</a
+            >
+          </div>
+          <div class="md:hidden mr-2">
+            <button  @click="menu=!menu"><img  src="icons/menu-button-of-three-horizontal-lines.png" class=" w-6 mt-3"></button>
+            
+          </div>
+        </div>
+      </nav>
+      <div v-show="menu" class=" md:hidden w-full bg-gray-200 font-semibold flex flex-col">
+        <a href="news.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300 "
+        >NEWS</a
+      > 
+      <a href="gallery.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300  "
+      >GALLERY</a
+    >
+    <a href="gallery.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300  "
+      >ADD PROJECT</a
+    >
+          <a href="aboutus.html" class="border-b-2 border-white p-2 hover:text-blue-700 duration-300  "
+        >ABOUT US</a
+      > 
+       <a href="contactus.html" class="border-b-2 border-white p-2 hover:text-blue-700  duration-300 "
+        >CONTACT US</a
+      >
+      </div>
+
+
+     <h1 style="font-family: 'Questrial', sans-serif;"class="text-center mt-16 font-black  text-3xl ">Add Your Project</h1>
+    <div class="flex  justify-center  font-semibold text-black  bg-white text-xl bg-opacity-90 max-w-4xl p-12 space-x-44 mt-8 mx-auto">
+       <div class="space-y-6">
+           <div class="space-y-2">
+                <p>Project Name</p>
+                <input v-model="ProjectName" type="text" class="rounded-md w-80  border-2 outline-none hover:border-blue-300 focus:border-blue-700   p-2">
+            </div>
+            <div class="space-y-2">
+                <p>Project Owner</p>
+                <input v-model="PojectOwner" type="text" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
+            </div>
+            <div class="space-y-2">
+                <p>Construction Company</p>
+                <input v-model="ConstructionCompan" type="text" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
+            </div>
+            <div class="space-y-2">
+                <p>Contact Info</p>
+                <input v-model="ContactInfo" type="text" placeholder="email or phone" class="rounded-md w-80  border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
+            </div>
+       </div>
+
+
+       <div class="space-y-6">
+<div class="space-y-2">
+                <p>Project Type</p>
+                <input v-model="ProjectType" type="text" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
+            </div>
+            <div class="space-y-2">
+                <p>Start Date</p>
+                <input v-model="StartDate" type="date" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2 pr-8">
+            </div>
+            <div class="space-y-2">
+                <p>Finish Date</p>
+                <input v-model="FinishDate" type="date"  class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2 pr-8">
+            </div>
+            <div>
+                    <button @click="submit" class="mt-8 w-full text-center bg-blue-700 py-2 rounded-lg text-white border-transparent font-semibold hover:bg-blue-800 focus:bg-white focus:text-blue-700 focus:border-blue-700 border-2 border-blue-700 border-2">
+            submit
+               </button>
+            <p v-show="message" class=" bg-red-600 p-2 text-white rounded-md mt-2">
+                please fill all fields
+            </p>
+            </div>
+            </div>              
+        </div>
+
+
+
+
+
+
+        <!-- FOOTER -->
+   
+ <div class="flex justify-center text-xl border-t-2 mt-12 bg-opacity-90 bg-white">
+    <div class=" flex-col ">
+      <div class=" font-semibold flex justify-center text-3xl text-gray-700">
+        <img  class=" w-24" src="img/logo.png" alt="">
+      </div>
+      <div class="flex justify-center space-x-4 mt-">
+        <a href="https://www.facebook.com/BaghdadProjects">
+          <img class="w-10" src="icons/facebook.png" alt="">
+        </a>
+       <a href="https://www.instagram.com/baghdadprojects/?fbclid=IwAR2Jm3z72x9w1m4j8kPzClwEI2pBCahKLZwNuCYHhC0BwI_eCiDwH202zXg">
+         <img class="w-10" src="icons/instagram.png" alt="">
+       </a>
+      <a href="contactus.html">
+        <img class="w-10" src="icons/whatsapp.png" alt="">
+      </a>
+      <a href="contactus.html">
+        <img class="w-10" src="icons/email.png" alt="">
+      </a>
+     </div>
+     <div class="mt-3 pb-8 flex text-sm text-gray-500 font-semibold items-center space-x-1">
+       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 16 16">
+      <path fill="#444444" d="M8 1.5c3.6 0 6.5 2.9 6.5 6.5s-2.9 6.5-6.5 6.5-6.5-2.9-6.5-6.5 2.9-6.5 6.5-6.5zM8 0c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8v0z"></path>
+      <path fill="#444444" d="M9.9 10.3c-0.5 0.4-1.2 0.7-1.9 0.7-1.7 0-3-1.3-3-3s1.3-3 3-3c0.8 0 1.6 0.3 2.1 0.9l1.1-1.1c-0.8-0.8-2-1.3-3.2-1.3-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5c1.1 0 2-0.4 2.8-1l-0.9-1.2z"></path>
+      </svg>
+      
+    <p class="">2016-2021 Baghdad Projects. All Rights Reserved.</p>
+    </div>
+    </div>
+    
+    
+    </div>
+
+    </body>
+</div>
+
+
+
+
+<script src="vue.js"></script>
+<script>
+    let app = new Vue ({
+        el: "#app",
+        data:{
+            ProjectName:"",
+            PojectOwner:"",
+            ConstructionCompan:"",
+            ContactInfo:"",
+            ProjectType:"",
+            StartDate:null,
+            FinishDate:null,
+             message:false
+        },
+        methods: {
+            submit(){
+           if(
+            this.ProjectName==''
+            ||
+            this.PojectOwner==''
+            ||
+            this.ConstructionCompan==''
+            ||
+            this.ContactInfo==''
+            ||
+            this.ProjectType==''
+            ||
+            this.StartDate==null
+            ||
+            this.FinishDate==null
+           )
+           {
+            this.message = true
+           }
+           else{
+            this.message = false
+           }
+            }
+        },
+    })
+</script>
+</html>
