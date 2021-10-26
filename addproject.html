@@ -15,7 +15,7 @@
     <!-- NAV -->
     <nav class="bg-gray-200 inset-x-0 md:fixed md:top-0 z-50 bg-opacity-90">
         <div class="flex justify-between ">   <a
-            href="\"
+            href="index.html"
             class="flex items-center justify-center font-semibold"
           >
             <img class="h-12" src="img/logo.png" alt="logo" />
@@ -70,19 +70,19 @@
        <div class="space-y-6">
            <div class="space-y-2">
                 <p>Project Name</p>
-                <input v-model="ProjectName" type="text" class="rounded-md w-80  border-2 outline-none hover:border-blue-300 focus:border-blue-700   p-2">
+                <input v-model="all" type="text" class="rounded-md w-80  border-2 outline-none hover:border-blue-300 focus:border-blue-700   p-2">
             </div>
             <div class="space-y-2">
                 <p>Project Owner</p>
-                <input v-model="PojectOwner" type="text" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
+                <input v-model="all" type="text" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
             </div>
             <div class="space-y-2">
                 <p>Construction Company</p>
-                <input v-model="ConstructionCompan" type="text" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
+                <input v-model="all" type="text" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
             </div>
             <div class="space-y-2">
                 <p>Contact Info</p>
-                <input v-model="ContactInfo" type="text" placeholder="email or phone" class="rounded-md w-80  border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
+                <input v-model="all" type="text" placeholder="email or phone" class="rounded-md w-80  border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
             </div>
        </div>
 
@@ -90,15 +90,15 @@
        <div class="space-y-6">
 <div class="space-y-2">
                 <p>Project Type</p>
-                <input v-model="ProjectType" type="text" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
+                <input v-model="all" type="text" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2">
             </div>
             <div class="space-y-2">
                 <p>Start Date</p>
-                <input v-model="StartDate" type="date" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2 pr-8">
+                <input v-model="all" type="date" class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2 pr-8">
             </div>
             <div class="space-y-2">
                 <p>Finish Date</p>
-                <input v-model="FinishDate" type="date"  class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2 pr-8">
+                <input v-model="all" type="date"  class="rounded-md w-80 border-2 outline-none hover:border-blue-300 focus:border-blue-700 p-2 pr-8">
             </div>
             <div>
                     <button @click="submit" class="mt-8 w-full text-center bg-blue-700 py-2 rounded-lg text-white border-transparent font-semibold hover:bg-blue-800 focus:bg-white focus:text-blue-700 focus:border-blue-700 border-2 border-blue-700 border-2">
