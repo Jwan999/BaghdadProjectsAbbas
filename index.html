@@ -108,10 +108,10 @@
         NEWS
       </a>
       
-      <div class=" md:flex justify-center  mt-4 ">
+      <div class=" md:flex justify-center h-96 mt-4 ">
               <ul class="grid md:grid-cols-4 gap-6">
             <li  v-for="item in news">
-              <div class="transform  hover:scale-105 duration-500 shadow-lg hover:shadow-xl ">
+              <div class="transform hover:scale-105 duration-500 shadow-lg hover:shadow-xl ">
               <img class="w-full h-52 object-cover" :src="item.img" alt="">
               <div class="px-4 py-2">
                 <div class="flex  space-x-2 mt-2">
@@ -146,12 +146,12 @@
     <!-- GALLERY -->
     
         <div class=" mt-44  w-full md:flex justify-between ">   
-    <div class="md:mx-24 mx-6 text-center mt-12  md:w-1/3">
-<h1 style="font-family: 'Questrial', sans-serif;" class="font-black text-2xl md:text-3xl mb-2  ">
-discover Baghdad projects and their story through our <a href="gallery.html" class=" text-blue-700 "> gallery</a> </h1>
-<p class="text-gray-800  md:text-xl">
+    <div class="md:mx-24 mx-6 text-center mt-20 md:w-1/3">
+<h1 style="font-family: 'Questrial', sans-serif;" class="font-black text-2xl md:text-4xl mb-2  ">
+Discover Baghdad projects and their story through our <a href="gallery.html" class=" text-blue-700 "> gallery</a> </h1>
+<!-- <p class="text-gray-800 text-justify md:text-xl">
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex id odio tenetur mollitia, fugit sed nesciunt iusto hic, consequuntur tempora. Ut, dolor. Et, iusto quae in dignissimos quam eligendi.
-</p>
+</p> -->
 <a href="gallery.html" >
 
   <button  class=" mt-8 w-44 text-center bg-blue-700 py-3 rounded-lg text-white font-semibold hover:bg-blue-800 focus:bg-white focus:text-blue-700 focus:border-blue-700 border-2 border-blue-700">
@@ -160,7 +160,7 @@ discover Baghdad projects and their story through our <a href="gallery.html" cla
   </button>
 </a>
     </div>
-    <div class="md:mr-32 mx-6 md:w-5/12">
+    <div class="md:mr-32 mt-2 mx-6 md:w-5/12">
       <div class=" relative ease-linear" v-for="(slide, index) in slides" :key="slide" :index="index" visibleSlide="visibleSlide">
             <div class="h-2/4" v-show="visibleSlide === index"> 
                    <img  class="mt-8  md:mt-0 relative overflow-hidden h-96 w-full object-cover  shadow-2xl" :src="slide" alt="">                                 
@@ -177,7 +177,7 @@ discover Baghdad projects and their story through our <a href="gallery.html" cla
     
     
         <!-- PROJECTS TRACKER -->
-    <h1 style="font-family: 'Questrial', sans-serif;"class=" font-black text-2xl md:text-4xl text-center font-black  mt-56">
+    <h1 style="font-family: 'Questrial', sans-serif;"class=" font-black text-2xl md:text-4xl text-center font-black  mt-36">
           keep an eye on the projects progress with our <a href="projectstracker.html" class=" text-blue-700 ">
             Projects Tracker
           </a> 
@@ -293,65 +293,62 @@ discover Baghdad projects and their story through our <a href="gallery.html" cla
                 news:[
                 {
               title:"Central Bank of Iraq",
-              header:"Central Bank of Iraq",
-              details:"Designed by Zaha Hadid, the buliding of the Central Bank of Iraq raising to the sky",
+              header:"Iraqi Cabinet Pushes Ahead with Real Estate Projects",
+              details:``,
               loc:"Baghdad",
-              img:"img/news/7.jpg",
+              img:"img/31jpg.jpg",
               time:"2 hours ago"
               },
                 {
               title:"Central Bank of Iraq",
-              header:"Central Bank of Iraq",
-              details:"Designed by Zaha Hadid, the buliding of the Central Bank of Iraq raising to the sky",
+              header:"PEG to Study Rail Link to Grand Faw Port",
+              details:"",
               loc:"Baghdad",
-              img:"img/news/7.jpg",
+              img:"img/33jpg.jpg",
               time:"2 hours ago"
               },
                 {
               title:"Central Bank of Iraq",
-              header:"Central Bank of Iraq",
-              details:"Designed by Zaha Hadid, the buliding of the Central Bank of Iraq raising to the sky",
+              header:"$890m for Reconstruction in Dhi Qar",
+              details:"",
               loc:"Baghdad",
-              img:"img/news/7.jpg",
+              img:"img/32.jpg",
               time:"2 hours ago"
               },
                 {
               title:"Central Bank of Iraq",
-              header:"Central Bank of Iraq",
-              details:"Designed by Zaha Hadid, the buliding of the Central Bank of Iraq raising to the sky",
+              header:"Asiacell Increases Customer Base and Revenues",
+              details:"",
               loc:"Baghdad",
-              img:"img/news/7.jpg",
+              img:"img/34.jpg",
               time:"2 hours ago"
               },
           ],
 
           projectTracker:[
             {
-            title:"Abraj City",
-          header:"Abraj City",
-          details:`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam reprehenderit impedit voluptas aut tempore magnam est accusantium ab fugiat itaque, accusamus, harum quidem illo omnis dolorum? Hic illo impedit provident.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam reprehenderit impedit voluptas aut tempore magnam est accusantium ab fugiat itaque, accusamus, harum quidem illo omnis dolorum? Hic illo impedit provident.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam reprehenderit impedit voluptas aut tempore magnam est accusantium ab fugiat itaque, accusamus, harum quidem illo omnis dolorum? Hic illo impedit provident.`,
-          comp:95,
-          img:"img/Abraj.jpg",
+            title:"Al Habibya Stadium",
+          header:"Al Habibya Stadium",
+          details:`The stadium is the most modern football stadium and the first ever stadium solar power plant in the city of Baghdad and the middle-Euphrates area. It can accommodate more than 32 thousand spectators and construction work was completed on December 18, 2019.
+          Al Habibya International Stadium's construction started in 2 July 2012 and the construction was at an overall cost of $100,000,000 funded by the government of Iraq. It is a grass surfaced football arena with a total area of 30,000m. It can seat up to 32,000 spectators and has other sports-related facilities. It was designed and built by Nurol Construction.
+          It was scheduled to be inaugurated in early 2020, but the unprecedented situation linked to the global health crisis forced the Iraqi authorities to postpone the opening to 2021`,
+          comp:100,
+          img:"img/37.jpg",
           time:2021
           },              {
                 title:"Central Bank of Iraq",
               header:"Central Bank of Iraq",
-              details:`  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam reprehenderit impedit voluptas aut tempore magnam est accusantium ab fugiat itaque, accusamus, harum quidem illo omnis dolorum? Hic illo impedit provident.
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam reprehenderit impedit voluptas aut tempore magnam est accusantium ab fugiat itaque, accusamus, harum quidem illo omnis dolorum? Hic illo impedit provident.
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam reprehenderit impedit voluptas aut tempore magnam est accusantium ab fugiat itaque, accusamus, harum quidem illo omnis dolorum? Hic illo impedit provident.`,
+              details:`Rising from the sloping banks of the Tigris River in Baghdad, the design for the new headquarters of the Central Bank of Iraq (CBI) conveys the core values at the heart of the institution: Solidity, Stability and Sustainability. These values are mirrored by the historic importance of the river on which the CBI stands. The Tigris has been the city’s key trade route and vital water source for millennia. It has shaped Iraq’s history and is the foundation from which the country will build its future.
+              At a height of 170 metres and a gross internal area of 90,000 square metres, the composition of the design is tailored to the very specific constraints of the site. Narrow at its base, the tower widens in the middle to optimise the layout and increase efficiencies, and then tapers inwards towards the top.  `,
               comp:80,
-              img:"img/1.jpg",
+              img:"img/35.jpg",
               time:2022
               },              {
                 title:"Central Bank of Iraq",
               header:"Central Bank of Iraq",
-              details:`  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam reprehenderit impedit voluptas aut tempore magnam est accusantium ab fugiat itaque, accusamus, harum quidem illo omnis dolorum? Hic illo impedit provident.
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam reprehenderit impedit voluptas aut tempore magnam est accusantium ab fugiat itaque, accusamus, harum quidem illo omnis dolorum? Hic illo impedit provident.
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam reprehenderit impedit voluptas aut tempore magnam est accusantium ab fugiat itaque, accusamus, harum quidem illo omnis dolorum? Hic illo impedit provident.`,
-              comp:80,
-              img:"img/news/7.jpg",
+              details:`Rising from the sloping banks of the Tigris River in Baghdad, the design for the new headquarters of the Central Bank of Iraq (CBI) conveys the core values at the heart of the institution: Solidity, Stability and Sustainability. These values are mirrored by the historic importance of the river on which the CBI stands. The Tigris has been the city’s key trade route and vital water source for millennia. It has shaped Iraq’s history and is the foundation from which the country will build its future.
+              At a height of 170 metres and a gross internal area of 90,000 square metres, the composition of the design is tailored to the very specific constraints of the site. Narrow at its base, the tower widens in the middle to optimise the layout and increase efficiencies, and then tapers inwards towards the top.  `,              comp:80,
+              img:"img/36.jpg",
               time:2022
               },
       
